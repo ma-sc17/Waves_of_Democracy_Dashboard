@@ -294,9 +294,7 @@ for year in highlight_years:
     )
 
 highlight_events = {
-    1914: "",
     1918: "World War I",
-    1939: "",
     1945: "World War II",
     1974: "Global Oil crisis",
     1989: "Cold War ends",
@@ -311,7 +309,9 @@ for i, (year, event) in enumerate(highlight_events.items()):
         yref="paper",
         text=event,
         textangle=45,        
-        font=dict(color="white", size=12), 
+        font=dict(color="white", size=12),
+        xanchor="center",
+        yanchor="top", 
         bgcolor="rgba(0,0,0,0.7)"
     )
     
