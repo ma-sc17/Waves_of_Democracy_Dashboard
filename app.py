@@ -5,7 +5,7 @@ import pycountry
 
 df = pd.read_csv("data/processed/vdem_panel.csv")
 
-st.title("Waves of Autocratization Tracker")
+st.title("Waves of Democracy Tracker")
 
 
 variable_labels = {
@@ -269,5 +269,25 @@ fig_area.update_layout(
     plot_bgcolor="#0e1117"
 )
 
+#Year highlighting with annotations
+highlight_years = {
+    1914: "WWI starts",
+    1939: "WWII starts", 
+    1989: "Berlin Wall falls",
+    2008: "Global Financial Crisis",
+    2020: "COVID-19 pandemic"
+}
+
+for year, event in highlight_years.items():
+    fig_area.add_vline(
+        x=year,
+        line_dash="dot",
+        line_color="#97f554",
+        line_width=2,
+        annotation_text=event,
+        annotation_position="top right",
+        annotation_font_color="white",
+        annotation_font_size=10
+    )
 
 st.plotly_chart(fig_area, theme=None, width="stretch")
