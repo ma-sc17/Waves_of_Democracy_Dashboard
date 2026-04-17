@@ -312,10 +312,6 @@ for i, (year, event) in enumerate(highlight_events.items()):
         text=event,
         textangle=45,        
         font=dict(color="white", size=12),
-        showarrow=True,
-        arrowcolor="yellow",
-        arrowwidth=2,
-        arrowhead=2,
         xanchor="center",
         yanchor="top",       
         bgcolor="rgba(0,0,0,0.7)"
