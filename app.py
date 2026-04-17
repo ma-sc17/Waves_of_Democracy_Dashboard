@@ -285,7 +285,7 @@ highlight_years = {
 for i, (year, event) in enumerate(highlight_years.items()):
     fig_area.add_annotation(
         x=year,
-        y=20 + (i * 6),  # Stagger vertically
+        y=100,  # Stagger vertically
         text=event,
         textangle=-45,     # ← Angled text
         font=dict(color="white", size=10),
