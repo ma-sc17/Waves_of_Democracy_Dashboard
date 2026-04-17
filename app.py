@@ -271,23 +271,27 @@ fig_area.update_layout(
 
 #Year highlighting with annotations
 highlight_years = {
-    1914: "WWI starts",
-    1939: "WWII starts", 
-    1989: "Berlin Wall falls",
-    2008: "Global Financial Crisis",
-    2020: "COVID-19 pandemic"
+    1914: "World War I starts",
+    1939: "World War II ends",
+    1974: "Global Oil crisis",
+    1989: "Cold War ends",
+    2001: "9/11 attacks",
+    2008: "Global financial crisis",
+    2016: "Brexit & Election of Donald Trump",
+    2020: "COVID"
 }
 
 for year, event in highlight_years.items():
-    fig_area.add_vline(
-        x=year,
-        line_dash="dot",
-        line_color="#97f554",
-        line_width=2,
-        annotation_text=event,
-        annotation_position="top right",
-        annotation_font_color="white",
-        annotation_font_size=10
+    fig_area.add_shape(
+        type="line",
+        x0=year, x1=year,
+        y0=0, y1=1,
+        xref="x", yref="paper",
+        line=dict(color="#97f554", width=2, dash="dot"),
+        hoverinfo="text",
+        hovertext=event,
+        hoverlabel=dict(bgcolor="rgba(0,0,0,0.8)", font_color="white")
     )
+
 
 st.plotly_chart(fig_area, theme=None, width="stretch")
