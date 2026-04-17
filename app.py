@@ -311,9 +311,7 @@ for i, (year, event) in enumerate(highlight_events.items()):
         yref="paper",
         text=event,
         textangle=45,        
-        font=dict(color="white", size=12),
-        xanchor="center",
-        yanchor="top",       
+        font=dict(color="white", size=12), 
         bgcolor="rgba(0,0,0,0.7)"
     )
     
