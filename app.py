@@ -286,18 +286,12 @@ highlight_years = {
 for year, event in highlight_years.items():
     fig_area.add_trace(
         go.Scatter(
-            x=[year],
-            y=[50],  # Center point
-            mode="markers+lines",
+            x=[year, year],  # ← Two points = vertical line
+            y=[0, 100],      # ← Full height
+            mode="lines",    # ← Lines only
             line=dict(
-                color="rgba(255,255,0,0.3)",
-                width=12 
-            ),
-            marker=dict(
-                size=8,
-                color="yellow",
-                symbol="circle",
-                opacity=0.6
+                color="rgba(255,255,0,0.3)",  # Subtle yellow
+                width=12  # Medium hitbox
             ),
             hovertemplate=f"<b>{event}</b><br>Year: {year}<extra></extra>",
             hoverlabel=dict(
@@ -310,5 +304,6 @@ for year, event in highlight_years.items():
             name=""
         )
     )
+
 
 st.plotly_chart(fig_area, theme=None, width="stretch")
