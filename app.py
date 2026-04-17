@@ -12,10 +12,10 @@ st.title("Waves of Democracy Tracker")
 
 variable_labels = {
     "v2x_libdem": "Liberal Democracy Index",
-    "v2x_polyarchy": "Electoral Democracy / Polyarchy",
-    "v2x_partipdem": "Participatory Democracy",
-    "v2x_delibdem": "Deliberative Democracy",
-    "v2x_egaldem": "Egalitarian Democracy"
+    "v2x_polyarchy": "Electoral Democracy / Polyarchy Index",
+    "v2x_partipdem": "Participatory Democracy Index",
+    "v2x_delibdem": "Deliberative Democracy Index",
+    "v2x_egaldem": "Egalitarian Democracy Index"
 }
 
 selected_var = st.selectbox(
@@ -191,11 +191,11 @@ st.plotly_chart(fig_change, theme=None, width="stretch")
 
 #Wave visualizer
 
-st.subheader("Waves of Democratization/Autocratization?")
+st.subheader("Waves of Democratization or Autocratization?")
 
 selected_var = st.selectbox(
     "Choose V-Dem variable",
-    ["v2x_libdem", "v2x_polyarchy", "v2x_partipdem"],
+    ["v2x_libdem", "v2x_polyarchy", "v2x_partipdem", "v2x_delibdem", "v2x_egaldem"],
     format_func=lambda x: variable_labels[x]
 )
 
