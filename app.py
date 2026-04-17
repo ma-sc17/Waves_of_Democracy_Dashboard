@@ -283,8 +283,7 @@ highlight_years = {
     2020: "COVID"
 }
 
-for year in highlight_years:
-    event = highlight_events[year]
+for year, event in highlight_years.items():  # ← .items() fixes it!
     fig_area.add_trace(
         go.Scatter(
             x=[year, year],
@@ -292,7 +291,7 @@ for year in highlight_years:
             mode="lines",
             line=dict(
                 color="rgba(255,255,0,0.1)",
-                width=25  # ← Wide hitbox (pixels)
+                width=25
             ),
             hovertemplate=f"<b>{event}</b><br>Year: {year}<extra></extra>",
             hoverlabel=dict(
@@ -305,6 +304,5 @@ for year in highlight_years:
             name=""
         )
     )
-
 
 st.plotly_chart(fig_area, theme=None, width="stretch")
