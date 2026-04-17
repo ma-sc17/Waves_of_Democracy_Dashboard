@@ -37,6 +37,7 @@ fig_line = px.line(
     sub_country,
     x="year",
     y=selected_var,
+    line=dict(color="#97f554", width=2),
     title=f"{selected_var}: {country}"
 )
 
