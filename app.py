@@ -150,7 +150,7 @@ year = st.session_state.year_slider
 
 selected_var = st.selectbox(
     "Choose V-Dem variable",
-    ["v2x_libdem", "v2x_polyarchy", "v2x_partipdem", "v2x_delibdem", "v2x_egaldem"],
+    ["v2x_libdem", "v2x_polyarchy", "v2x_partipdem"],
     format_func=lambda x: variable_labels[x]
 )
 
