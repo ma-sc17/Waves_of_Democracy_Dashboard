@@ -283,15 +283,21 @@ highlight_years = {
     2020: "COVID"
 }
 
-for year, event in highlight_years.items():  # ← .items() fixes it!
+for year, event in highlight_years.items():
     fig_area.add_trace(
         go.Scatter(
-            x=[year, year],
-            y=[0, 100],
-            mode="lines",
+            x=[year],
+            y=[50],  # Center point
+            mode="markers+lines",
             line=dict(
-                color="rgba(255,255,0,0.1)",
-                width=25
+                color="rgba(255,255,0,0.3)",
+                width=12 
+            ),
+            marker=dict(
+                size=8,
+                color="yellow",
+                symbol="circle",
+                opacity=0.6
             ),
             hovertemplate=f"<b>{event}</b><br>Year: {year}<extra></extra>",
             hoverlabel=dict(
