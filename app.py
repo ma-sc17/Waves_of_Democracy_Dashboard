@@ -294,10 +294,10 @@ for year in highlight_years:
     )
 
 highlight_events = {
-    1914: "World War I begins",
-    1918: "World War I ends",
-    1939: "World War II begins",
-    1945: "World War II ends",
+    1914: "",
+    1918: "World War I",
+    1939: "",
+    1945: "World War II",
     1974: "Global Oil crisis",
     1989: "Cold War ends",
     2008: "Global financial crisis",
@@ -311,7 +311,7 @@ for i, (year, event) in enumerate(highlight_events.items()):
         yref="paper",
         text=event,
         textangle=45,        
-        font=dict(color="white", size=10),
+        font=dict(color="white", size=12),
         showarrow=True,
         arrowcolor="yellow",
         arrowwidth=2,
