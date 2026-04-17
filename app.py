@@ -306,7 +306,7 @@ highlight_events = {
 for i, (year, event) in enumerate(highlight_events.items()):
     fig_area.add_annotation(
         x=year,
-        y=-0.12,             
+        y=-0.25,             
         yref="paper",
         text=event,
         textangle=45,        
