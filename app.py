@@ -280,30 +280,24 @@ highlight_years = {
     2001: "9/11 attacks",
     2008: "Global financial crisis",
     2016: "Brexit & Election of Donald Trump",
-    2020: "COVID"
 }
 
-for year, event in highlight_years.items():
-    fig_area.add_trace(
-        go.Scatter(
-            x=[year, year],  # ← Two points = vertical line
-            y=[0, 100],      # ← Full height
-            mode="lines",    # ← Lines only
-            line=dict(
-                color="rgba(255,255,0,0.3)",  # Subtle yellow
-                width=12  # Medium hitbox
-            ),
-            hovertemplate=f"<b>{event}</b><br>Year: {year}<extra></extra>",
-            hoverlabel=dict(
-                bgcolor="rgba(0,0,0,0.9)",
-                font_color="white",
-                bordercolor="yellow",
-                font_size=12
-            ),
-            showlegend=False,
-            name=""
-        )
+for i, (year, event) in enumerate(highlight_years.items()):
+    fig_area.add_annotation(
+        x=year,
+        y=20 + (i * 6),  # Stagger vertically
+        text=event,
+        textangle=-45,     # ← Angled text
+        font=dict(color="white", size=10),
+        showarrow=True,
+        arrowcolor="#97f554",
+        arrowwidth=1,
+        arrowhead=1,
+        xanchor="left",
+        yanchor="bottom"
     )
+
+st.plotly_chart(fig_area, theme=None, width="stretch")
 
 
 st.plotly_chart(fig_area, theme=None, width="stretch")
