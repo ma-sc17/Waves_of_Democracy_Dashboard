@@ -277,7 +277,7 @@ fig_area.update_layout(
 fig_area.update_layout(
     yaxis=dict(range=[0, 100], tickformat=".0f", ticksuffix="%"),
     xaxis=dict(range=[1900,2024]),
-    margin=dict(t=150), 
+    margin=dict(t=200), 
     template="plotly_dark",
     paper_bgcolor="#0e1117",
     plot_bgcolor="#0e1117"
