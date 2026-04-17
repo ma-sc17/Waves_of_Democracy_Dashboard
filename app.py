@@ -283,7 +283,7 @@ fig_area.update_layout(
     plot_bgcolor="#0e1117"
 )
 
-highlight_years = [1914, 1939, 1974, 1989, 2001, 2008, 2016]
+highlight_years = [1918, 1945, 1974, 1989, 2008, 2016]
 for year in highlight_years:
     fig_area.add_shape(
         type="line",
@@ -294,11 +294,10 @@ for year in highlight_years:
     )
 
 highlight_events = {
-    1914: "World War I starts",
-    1939: "World War II ends",
+    1918: "World War I starts",
+    1945: "World War II ends",
     1974: "Global Oil crisis",
     1989: "Cold War ends",
-    2001: "9/11 attacks",
     2008: "Global financial crisis",
     2016: "Brexit & Trump election"
 }
