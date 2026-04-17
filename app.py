@@ -294,7 +294,7 @@ for year in highlight_years:
     )
 
 highlight_events = {
-    1918: "World War I starts",
+    1918: "World War I ends",
     1945: "World War II ends",
     1974: "Global Oil crisis",
     1989: "Cold War ends",
