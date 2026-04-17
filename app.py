@@ -274,6 +274,15 @@ fig_area.update_layout(
 
 #Year highlighting with annotations
 
+fig_area.update_layout(
+    yaxis=dict(range=[0, 100], tickformat=".0f", ticksuffix="%"),
+    xaxis=dict(range=[1900,2024]),
+    margin=dict(b=120), 
+    template="plotly_dark",
+    paper_bgcolor="#0e1117",
+    plot_bgcolor="#0e1117"
+)
+
 highlight_years = [1914, 1939, 1974, 1989, 2001, 2008, 2016]
 for year in highlight_years:
     fig_area.add_shape(
@@ -293,20 +302,22 @@ highlight_events = {
     2008: "Global financial crisis",
     2016: "Brexit & Trump election"
 }
+
 for i, (year, event) in enumerate(highlight_events.items()):
     fig_area.add_annotation(
         x=year,
-        y=1.05,
+        y=-0.12,             
         yref="paper",
         text=event,
-        textangle=-45,
+        textangle=45,        
         font=dict(color="white", size=11),
         showarrow=True,
-        arrowcolor="#97f554",
+        arrowcolor="yellow",
         arrowwidth=2,
         arrowhead=2,
         xanchor="center",
-        yanchor="bottom",
+        yanchor="top",       
         bgcolor="rgba(0,0,0,0.7)"
     )
+    
 st.plotly_chart(fig_area, theme=None, width="stretch")
