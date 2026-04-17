@@ -282,15 +282,18 @@ highlight_years = {
 }
 
 for year, event in highlight_years.items():
-    fig_area.add_shape(
-        type="line",
-        x0=year, x1=year,
-        y0=0, y1=1,
-        xref="x", yref="paper",
-        line=dict(color="#97f554", width=2, dash="dot"),
-        hoverinfo="text",
-        hovertext=event,
-        hoverlabel=dict(bgcolor="rgba(0,0,0,0.8)", font_color="white")
+    # Invisible line for hover
+    fig_area.add_trace(
+        go.Scatter(
+            x=[year, year],
+            y=[0, 100],
+            mode="lines",
+            line=dict(color="yellow", width=2, dash="dot"),
+            hovertemplate=f"<b>{event}</b><extra></extra>",
+            hoverlabel=dict(bgcolor="rgba(0,0,0,0.8)", font_color="white"),
+            showlegend=False,
+            opacity=0.3  # Semi-transparent line
+        )
     )
 
 
