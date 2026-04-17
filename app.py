@@ -284,16 +284,15 @@ for year in highlight_years:
         line=dict(color="#97f554", width=2, dash="dot")
     )
 
-highlight_years = {
+highlight_events = {
     1914: "World War I starts",
     1939: "World War II ends",
     1974: "Global Oil crisis",
     1989: "Cold War ends",
     2001: "9/11 attacks",
     2008: "Global financial crisis",
-    2016: "Brexit & Election of Donald Trump",
+    2016: "Brexit & Trump election"
 }
-
 for i, (year, event) in enumerate(highlight_events.items()):
     fig_area.add_annotation(
         x=year,
