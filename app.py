@@ -277,7 +277,7 @@ fig_area.update_layout(
 fig_area.update_layout(
     yaxis=dict(range=[0, 100], tickformat=".0f", ticksuffix="%"),
     xaxis=dict(range=[1900,2024]),
-    margin=dict(t=200), 
+    margin=dict(t=175), 
     template="plotly_dark",
     paper_bgcolor="#0e1117",
     plot_bgcolor="#0e1117"
@@ -311,7 +311,7 @@ for i, (year, event) in enumerate(highlight_events.items()):
         yref="paper",
         text=event,
         textangle=45,        
-        font=dict(color="white", size=9),
+        font=dict(color="white", size=10),
         showarrow=True,
         arrowcolor="yellow",
         arrowwidth=2,
