@@ -283,18 +283,26 @@ highlight_years = {
     2020: "COVID"
 }
 
-for year, event in highlight_years.items():
-    # Invisible line for hover
+for year in highlight_years:
+    event = highlight_events[year]
     fig_area.add_trace(
         go.Scatter(
             x=[year, year],
             y=[0, 100],
             mode="lines",
-            line=dict(color="yellow", width=2, dash="dot"),
-            hovertemplate=f"<b>{event}</b><extra></extra>",
-            hoverlabel=dict(bgcolor="rgba(0,0,0,0.8)", font_color="white"),
+            line=dict(
+                color="rgba(255,255,0,0.1)",
+                width=25  # ← Wide hitbox (pixels)
+            ),
+            hovertemplate=f"<b>{event}</b><br>Year: {year}<extra></extra>",
+            hoverlabel=dict(
+                bgcolor="rgba(0,0,0,0.9)",
+                font_color="white",
+                bordercolor="yellow",
+                font_size=12
+            ),
             showlegend=False,
-            opacity=0.3  # Semi-transparent line
+            name=""
         )
     )
 
