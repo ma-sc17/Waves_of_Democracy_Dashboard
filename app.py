@@ -314,8 +314,6 @@ fig_area.update_layout(
     plot_bgcolor="#0e1117"
 )
 
-st.plotly_chart(fig_area, use_container_width=True, theme=None)
-
 highlight_years = [1914, 1918, 1939, 1945, 1974, 1989, 2008, 2016]
 for year in highlight_years:
     fig_area.add_shape(
