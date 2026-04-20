@@ -305,13 +305,16 @@ fig_area.update_layout(
 #Year highlighting with annotations
 
 fig_area.update_layout(
+    height=850,
     yaxis=dict(range=[0, 100], tickformat=".0f", ticksuffix="%"),
-    xaxis=dict(range=[1900,2024]),
-    margin=dict(t=175), 
+    xaxis=dict(range=[1900, 2024]),
+    margin=dict(t=240, l=50, r=30, b=70),
     template="plotly_dark",
     paper_bgcolor="#0e1117",
     plot_bgcolor="#0e1117"
 )
+
+st.plotly_chart(fig_area, use_container_width=True, theme=None)
 
 highlight_years = [1914, 1918, 1939, 1945, 1974, 1989, 2008, 2016]
 for year in highlight_years:
