@@ -48,9 +48,8 @@ selected_var = st.selectbox(
     format_func=lambda x: variable_labels[x]
 )
 
-st.markdown(
-    f"**Definition:** {variable_descriptions.get(selected_var, 'No description available.')}"
-)
+st.info(variable_descriptions.get(selected_var, "No description available."))
+
 
 # Country selector
 country = st.selectbox(
