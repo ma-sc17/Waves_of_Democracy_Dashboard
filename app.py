@@ -296,10 +296,10 @@ fig_area = px.area(
 #Year highlighting with annotations
 
 fig_area.update_layout(
-    height=850,
+    height=550,
     yaxis=dict(range=[0, 100], tickformat=".0f", ticksuffix="%"),
     xaxis=dict(range=[1900, 2024]),
-    margin=dict(t=200, l=50, r=30, b=50),
+    margin=dict(t=240, l=50, r=30, b=50),
     template="plotly_dark",
     paper_bgcolor="#0e1117",
     plot_bgcolor="#0e1117"
@@ -327,7 +327,7 @@ highlight_events = {
 for i, (year, event) in enumerate(highlight_events.items()):
     fig_area.add_annotation(
         x=year,
-        y=1.1,             
+        y=1.05,             
         yref="paper",
         text=event,
         textangle=45,        
