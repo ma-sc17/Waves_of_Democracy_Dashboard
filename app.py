@@ -18,10 +18,38 @@ variable_labels = {
     "v2x_egaldem": "Egalitarian Democracy Index"
 }
 
+
+variable_descriptions = {
+    "v2x_libdem": (
+        "Liberal democracy focuses on protecting individual rights, rule of law, "
+        "and constraints on executive power."
+    ),
+    "v2x_polyarchy": (
+        "Electoral democracy (polyarchy) emphasizes free and fair elections, "
+        "broad suffrage, and an elected government."
+    ),
+    "v2x_partipdem": (
+        "Participatory democracy emphasizes active citizen participation in political "
+        "life beyond elections, including civil society and local engagement."
+    ),
+    "v2x_delibdem": (
+        "Deliberative democracy emphasizes reasoned discussion, respectful consultation, "
+        "and public decision-making guided by the common good."
+    ),
+    "v2x_egaldem": (
+        "Egalitarian democracy emphasizes political equality and the equal distribution "
+        "of power across social groups."
+    ),
+}
+
 selected_var = st.selectbox(
     "Choose V-Dem measure of democracy",
     list(variable_labels.keys()),
     format_func=lambda x: variable_labels[x]
+)
+
+st.markdown(
+    f"**Definition:** {variable_descriptions.get(selected_var, 'No description available.')}"
 )
 
 # Country selector
