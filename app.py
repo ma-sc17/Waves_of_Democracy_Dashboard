@@ -227,6 +227,8 @@ selected_var = st.selectbox(
     format_func=lambda x: variable_labels[x]
 )
 
+st.info(variable_descriptions.get(selected_var, "No description available."))
+
 # Calculate year-over-year changes
 df_yearfilter = df[df["year"] >= 1900].copy()
 df_sorted = df_yearfilter.sort_values(["country_text_id", "year"])
